@@ -76,6 +76,11 @@ body {
 	width: 300px;
 }
 
+a:active {
+  background-color: yellow;
+  color: green;
+}
+
 .button__dept {
 	width:170px;
   flex: auto;
@@ -99,6 +104,24 @@ body {
 	/* margin: 0.2em; */
   background-color: gray;
 }
+
+table, th, td {
+	border: 1px solid;
+}
+
+th {
+	/* display: table-cell; */
+	font-size: 1.5rem;
+}
+
+td {
+	/* display: table-cell; */
+	text-align: center;
+	width: 200px;
+	font-size: 1rem;
+}
+
+
 .dropdownlist {
 	background: white;
 	border: 2px solid red;
