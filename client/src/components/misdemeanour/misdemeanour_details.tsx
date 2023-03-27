@@ -3,20 +3,34 @@ import { Misdemeanour } from "../../types/misdemeanours.types";
 import { misdemenourConv } from "../../utils/misdemenaour_conversion";
 import MisdemenaourDropdown from "./misdemenaour_dropdown";
 import { misdemenaourDropdownProps } from "./misdemenaour_dropdown";
+import React from "react";
 
 interface MisdemeanourDetailsProps {
     misdemeanour: Misdemeanour[];
 }
 
 const MisdemeanourDetails: React.FC<MisdemeanourDetailsProps> = ({misdemeanour: mis}) => {
-    const listItems = mis.map((m) => <tr><td>{m.citizenId}</td><td>{m.date}</td><td>{misdemenourConv(m.misdemeanour)}</td><td></td></tr>);
+    const rand = (x: number) => {
+        const tmp = Math.floor(Math.random() * x);
+        return tmp <= 50 ? 50 : tmp;
+    };
+
+    const imgTag = () => {
+        return React.createElement(
+            "img",
+            {src: "https://picsum.photos/" + rand(100) + "/" + rand(120)},
+            null
+        );
+    }
+
+    const listItems = mis.map((m) => <tr><td>{m.citizenId}</td><td>{m.date}</td><td>{misdemenourConv(m.misdemeanour)}</td><td>{imgTag()}</td></tr>);
     const [ misList, setMisList ] = useState<JSX.Element[]>(listItems);
     const [ misValue, setMisValue ] = useState<string>('');
 
     const onChangeHandler = (value: string) => {
         console.log(value);
         if (value !== "default") {
-            setMisList(mis.filter((m) => m.misdemeanour === value).map((m) => <tr><td>{m.citizenId}</td><td>{m.date}</td><td>{misdemenourConv(m.misdemeanour)}</td><td></td></tr>)); 
+            setMisList(mis.filter((m) => m.misdemeanour === value).map((m) => <tr><td>{m.citizenId}</td><td>{m.date}</td><td>{misdemenourConv(m.misdemeanour)}</td><td>{imgTag()}</td></tr>)); 
         } else {
             setMisList(listItems);
         }
