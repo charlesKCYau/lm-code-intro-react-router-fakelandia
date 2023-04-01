@@ -31,18 +31,23 @@ body {
 	src: local('Cattino'), url(./fonts/Cattino.otf) format('woff');
 }
 
+h2 {
+	font-family: 'SleepyCat';
+	font-size: 1.7rem;
+}
+
 .form__container {
 	display: flex;
-	justify-content: left;
-	align-items: left;
+	align-content: flex-end;
+	align-items: flex-end;
 	flex-direction: column;
 }
 
 .form {
 	padding: 1.5em;
 	border: 6px solid var(--red);
-	max-width: 15.625em;
-	min-width: 11.25em;
+	max-width: 25em;
+	min-width: 11em;
 	border-radius: 7px;
 	background: var(--yellow);
 	margin-bottom: 1em;
@@ -58,8 +63,16 @@ body {
 	margin: 0.2em;
 }
 
+.div_container {
+	display: flex;
+	align-content: flex-end;
+	align-items: flex-end;
+	flex-direction: row;
+}
+
+
 .input {
-	border: 2px solid red;
+	border: 2px solid black;
 	border-radius: 4px;
 	font-family: 'SleepyCat';
 	font-size: 2rem;
@@ -67,8 +80,17 @@ body {
 	width: 400px;
 }
 
+.dropdownlist {
+	background: white;
+	border: 2px solid black;
+	border-radius: 4px;
+	font-family: 'SleepyCat';
+	font-size: 2rem;
+	width: 400px;
+}
+
 .button {
-	border: 2px solid red;
+	border: 2px solid black;
 	border-radius: 4px;
 	font-family: 'SleepyCat';
 	font-size: 2rem;
@@ -83,8 +105,8 @@ a:active {
 
 .button__dept {
 	width:170px;
-  flex: auto;
-  flex-wrap: wrap;
+  	flex: auto;
+  	flex-wrap: wrap;
 }
 
 .nav {
@@ -121,56 +143,8 @@ td {
 	font-size: 1rem;
 }
 
-
-.dropdownlist {
-	background: white;
-	border: 2px solid red;
-	border-radius: 4px;
-	font-family: 'SleepyCat';
-	font-size: 2rem;
-	width: 400px;
-}
-
 .message {
 	color: red;
 	font-family: 'SleepyCat';
 	font-size: 1.5rem;
 }
-/* .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-} */

@@ -26,7 +26,7 @@ const MisdemeanourObject : React.FC = () => {
                 )}
             </h1>
         </MisContextProvider>
-      );
+    );
 
 }
 
