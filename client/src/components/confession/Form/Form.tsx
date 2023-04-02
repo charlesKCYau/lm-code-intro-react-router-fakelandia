@@ -1,18 +1,17 @@
-import React, { useState, createContext, useContext } from 'react';
+import { useState } from 'react';
 import ReasonContact from '../ResonContact/ReasonContact';
 import Subject from '../Subject/Subject';
 import { API_BASE_URL } from '../../../config/config';
-
-const UserContext = React.createContext<{misdemeanour: string}>({ misdemeanour: ""});
 
 const Form = () => {
 	const [ subjectInputValue, setSubjectInputValue ] = useState<string>('');
     const [ detailsInputValue, setDetailsInputValue ] = useState<string>('');
     const [ selectValue, setSelectValue ] = useState<string>('default');
-    
+	
 	const submitForm = async () => {
 
 		try {
+			
 			const result = await fetch(`${API_BASE_URL}/confess`, {
 				headers: {
 					"Content-Type": "application/json",
@@ -23,7 +22,7 @@ const Form = () => {
 
 			const json = await result.json();
 			alert("insert status: " + json.success + "\nmessage: " + json.message);
-
+			// if (json.success && selectValue !== "just-talke")
 		} catch (e) {
 			console.error(e);
 		}    
