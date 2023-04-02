@@ -16,7 +16,10 @@ const MisdemeanourObject : React.FC = () => {
             <h1>Misdemeanour Page</h1>
             <h1>
                 {isFetching ? (
-                "Fetching..."
+                <>
+                    "Fetching..."
+                    <img src="/images/4colors.gif" alt="loading"/>
+                </>
                 ) : (
                 <>
                     {outputFetchResult(status, error, data, (data) => (
