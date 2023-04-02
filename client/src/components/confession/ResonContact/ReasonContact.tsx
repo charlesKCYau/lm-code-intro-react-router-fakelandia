@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import DropDown from '../DropDown/DropDown';
-import Message from '../Message';
+import Message from '../Message/Message';
 import { validateAllInputField } from '../../../validation/validation';
 import Textarea from '../Textarea/Textarea';
 

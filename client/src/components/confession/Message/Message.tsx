@@ -1,5 +1,3 @@
-import { useState } from 'react';
-
 export interface MessageProps {
     message: string | undefined;
 }
@@ -13,4 +11,3 @@ const Message: React.FC<MessageProps> = ({message}) => {
 };
 
 export default Message;
-  

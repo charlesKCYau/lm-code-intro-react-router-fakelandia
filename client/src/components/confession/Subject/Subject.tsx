@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import Message from '../Message';
+import Message from '../Message/Message';
 import TextInput from '../TextInput/TextInput';
 import { validateAllInputField } from '../../../validation/validation';
 
