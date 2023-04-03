@@ -16,7 +16,7 @@ const DropDown: React.FC<DropDownProps> = ({value: value, hiddenValue:hiddenValu
                 <option value="vegetables">{misdemenourConv("vegetables")}</option>
                 <option value="lift">{misdemenourConv("lift")}</option>
                 <option value="united">{misdemenourConv("united")}</option>
-                <option value="just-talk">I just want to talk</option>
+                <option value="just-talk">{misdemenourConv("just-talk")}</option>
             </select> 
             <input type="hidden" id="dropdown" value={hiddenValue} />
         </>

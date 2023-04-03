@@ -2,6 +2,7 @@ import { useState, useRef } from 'react';
 import ReasonContact from '../ResonContact/ReasonContact';
 import Subject from '../Subject/Subject';
 import { API_BASE_URL } from '../../../config/config';
+import { confessionData, confessionDB } from '../confessionData/confessionData';
 
 const Form = () => {
 	const formElement = useRef(null);
@@ -38,6 +39,8 @@ const Form = () => {
 					setStatus("error");
 				} else {
 					setStatus("success");
+					const newConfession: confessionData= {subject: subjectInputValue, reason: selectValue, details: detailsInputValue};
+					confessionDB.confDBarray.push(newConfession);
 				}
 			} catch (e) {
 				console.error(e);
@@ -55,7 +58,6 @@ const Form = () => {
 		  <>
 			<h2 className="message">Thank you!</h2>
 			<h2 className="message">{message}</h2>
-
 		  </>
 		);
 	}
