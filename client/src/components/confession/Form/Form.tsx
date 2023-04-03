@@ -10,12 +10,11 @@ const Form = () => {
     const [ detailsInputValue, setDetailsInputValue ] = useState<string>('');
     const [ selectValue, setSelectValue ] = useState<string>('default');
 
-
 	function useForm() {
 		const [status, setStatus] = useState("");
 		const [justTalked, setJustTalked] = useState("");
 		const [message, setMessage] = useState("");
-	  
+  
 		const handleSubmit = async (e:Event) => {
 			try {
 				e.preventDefault();
@@ -52,10 +51,11 @@ const Form = () => {
 	const { handleSubmit, status, justTalked, message } = useForm();
 
 	if (status === "success") {
-		return (
+	return (
 		  <>
 			<h2 className="message">Thank you!</h2>
 			<h2 className="message">{message}</h2>
+
 		  </>
 		);
 	}
@@ -68,28 +68,7 @@ const Form = () => {
 			</>
 		);
 	}
-
-	const submitForm = async (e:Event) => {
-
-		try {
-			e.preventDefault();
-			const result = await fetch(`${API_BASE_URL}/confess`, {
-				headers: {
-					"Content-Type": "application/json",
-				},
-				method: "POST",
-				body: JSON.stringify({ "subject": subjectInputValue, "reason": selectValue, "details": detailsInputValue }),
-			});
-
-			const json = await result.json();
-			alert("insert status: " + json.success + "\nmessage: " + json.message);
-			// if (json.success && selectValue !== "just-talke")
-
-		} catch (e) {
-			console.error(e);
-		}    
-	}
-
+	
 	return (
 		<>
 			<section className='confessionForm'>
