@@ -7,7 +7,7 @@ const Form = () => {
 	const [ subjectInputValue, setSubjectInputValue ] = useState<string>('');
     const [ detailsInputValue, setDetailsInputValue ] = useState<string>('');
     const [ selectValue, setSelectValue ] = useState<string>('default');
-	
+
 	const submitForm = async () => {
 
 		try {
@@ -23,6 +23,7 @@ const Form = () => {
 			const json = await result.json();
 			alert("insert status: " + json.success + "\nmessage: " + json.message);
 			// if (json.success && selectValue !== "just-talke")
+
 		} catch (e) {
 			console.error(e);
 		}    

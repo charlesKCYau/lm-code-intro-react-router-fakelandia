@@ -5,6 +5,7 @@ import { outputFetchResult } from "../../utils/output_fetch_result";
 import MisdemeanourDetails from "./misdemeanour_details";
 import { MisContextProvider } from "./MisdemeanourContext";
 
+
 const MisdemeanourObject : React.FC = () => {
     
     const { data, error, isFetching, status } = useFetchData<Array<Misdemeanour>>(
