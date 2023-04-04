@@ -2,13 +2,13 @@ import { useState } from 'react';
 import { Misdemeanour, MisdemeanourKind } from '../../types/misdemeanours.types';
 import { misdemenourConv } from '../../utils/misdemenaour_conversion';
 
-export interface misdemenaourDropdownProps {
+export interface misdemeanourDropdownProps {
     misKind: string;
     misOriginal: Misdemeanour[];
     onChangeMisValue: (e: any) => void;
 }
 
-const MisdemenaourDropdown: React.FC<misdemenaourDropdownProps> = ({misKind: value, misOriginal: misOriginal, onChangeMisValue: onChangeMisValue}) => {
+const MisdemeanourDropdown: React.FC<misdemeanourDropdownProps> = ({misKind: value, misOriginal: misOriginal, onChangeMisValue: onChangeMisValue}) => {
     const misList = misOriginal.map((mis) => mis.misdemeanour);
     let unique = misList.filter((item, i, ar) => ar.indexOf(item) === i);
     const misListOption = unique.map((mis) => <option value={mis}>{misdemenourConv(mis)}</option>);
@@ -29,5 +29,5 @@ const MisdemenaourDropdown: React.FC<misdemenaourDropdownProps> = ({misKind: val
 ;
 
 
-export default MisdemenaourDropdown;
+export default MisdemeanourDropdown;
   

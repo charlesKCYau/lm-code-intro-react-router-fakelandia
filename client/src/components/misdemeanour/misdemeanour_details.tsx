@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { Misdemeanour } from "../../types/misdemeanours.types";
 import { misdemenourConv } from "../../utils/misdemenaour_conversion";
-import MisdemenaourDropdown from "./misdemenaour_dropdown";
-import { misdemenaourDropdownProps } from "./misdemenaour_dropdown";
+import MisdemeanourDropdown from "./misdemeanour_dropdown";
+import { misdemeanourDropdownProps } from "./misdemeanour_dropdown";
 import React from "react";
 
 interface MisdemeanourDetailsProps {
@@ -42,7 +42,7 @@ const MisdemeanourDetails: React.FC<MisdemeanourDetailsProps> = ({misdemeanour: 
                     <tr>
                         <th>Citizen ID</th>
                         <th>Date</th>
-                        <th>Misdemeanour <MisdemenaourDropdown misKind = {misValue} misOriginal = {mis} onChangeMisValue = {onChangeHandler}/></th>
+                        <th>Misdemeanour <MisdemeanourDropdown misKind = {misValue} misOriginal = {mis} onChangeMisValue = {onChangeHandler}/></th>
                         <th>Punishment Idea</th>
                     </tr>
                 </thead>
