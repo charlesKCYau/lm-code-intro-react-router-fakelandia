@@ -1,11 +1,11 @@
 import { render, screen } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
-import Home from './home';
+import Confession from './confession';
 
-test('renders Home Page Title', () => {
-	render(<Home />);
+test('renders confession content', () => {
+	render(<Confession />);
 	const messageContent = screen.getByText(
-		/Home Page!/
+		/Confession Page/
 	);
 	expect(messageContent).toBeInTheDocument();
 });
