@@ -2,10 +2,9 @@ import { useState } from "react";
 import { Misdemeanour } from "../../types/misdemeanours.types";
 import { misdemenourConv } from "../../utils/misdemenaour_conversion";
 import MisdemeanourDropdown from "./misdemeanour_dropdown";
-import { misdemeanourDropdownProps } from "./misdemeanour_dropdown";
 import React from "react";
 
-interface MisdemeanourDetailsProps {
+export interface MisdemeanourDetailsProps {
     misdemeanour: Misdemeanour[];
 }
 
